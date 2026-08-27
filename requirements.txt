@@ -1,0 +1,11 @@
+lightkurve
+streamlit
+matplotlib
+pandas
+numpy
+xgboost
+scikit-learn
+google-genai
+python-dotenv
+plotly
+google-generativeai

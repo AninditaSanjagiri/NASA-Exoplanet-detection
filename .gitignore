@@ -1,0 +1,25 @@
+# Python cache & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Streamlit config & local state
+.streamlit/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env
+
+# Lightkurve download cache (prevent pushing large FITS files)
+.lightkurve-cache/
+.astropy/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Hide my secrets!
+.env
