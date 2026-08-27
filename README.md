@@ -19,7 +19,7 @@ Building this pipeline was a journey from understanding basic astrophysics to de
 ### 1. Learning the Fundamentals
 I started completely from scratch by studying how exoplanet transits actually work. I followed this excellent [YouTube Tutorial - https://youtu.be/J2yD9JrqllA?si=57EqiMzPzEFjPuGK] to understand the math behind dips in starlight and how to interact with NASA's archive. 
 
-(https://github.com/user-attachments/assets/e0a840c4-61f7-4f99-a6d9-1ca33d8f924c)
+(<img width="1996" height="1442" alt="Image" src="https://github.com/user-attachments/assets/e0a840c4-61f7-4f99-a6d9-1ca33d8f924c" />)
 
 ### 2. Manual Data Analysis
 Before automating anything, I had to get my hands dirty with the data. Using the `lightkurve` library, I manually queried the MAST (Mikulski Archive for Space Telescopes) API. I learned how to download raw flux data, clean out stellar noise, flatten the light curves, and manually fold the data to find periodic transit signals.
