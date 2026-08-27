@@ -24,7 +24,7 @@ I started completely from scratch by studying how exoplanet transits actually wo
 ### 2. Manual Data Analysis
 Before automating anything, I had to get my hands dirty with the data. Using the `lightkurve` library, I manually queried the MAST (Mikulski Archive for Space Telescopes) API. I learned how to download raw flux data, clean out stellar noise, flatten the light curves, and manually fold the data to find periodic transit signals.
 
-![Placeholder: Image of a raw, messy light curve vs a clean, folded light curve](INSERT_IMAGE_LINK_HERE)
+(<img width="1658" height="860" alt="Image" src="https://github.com/user-attachments/assets/912b0dd0-a3ae-4ffd-a3d2-d5421c41ff61" />)
 
 ### 3. Pipeline Automation & AI Integration
 Once I understood the manual process, I engineered an automated pipeline. 
@@ -33,13 +33,13 @@ Once I understood the manual process, I engineered an automated pipeline.
 * I integrated the **Gemini 3.6 API** to act as an automated astrophysicist, generating a comprehensive, human-readable dossier based on the telemetry and model confidence.
 * Finally, I wrapped it all in a responsive **Streamlit** web application.
 
-![Placeholder: Screenshot of the final working Streamlit dashboard](INSERT_IMAGE_LINK_HERE)
+(<img width="2880" height="1604" alt="Image" src="https://github.com/user-attachments/assets/f115f748-4d6f-4a2f-9d03-470223b22c3d" />)
 
 ---
 
 ## 🧠 System Architecture
 
-![Placeholder: Architecture Diagram - Create a quick flowchart in Canva or draw.io showing: User Input -> MAST API -> Data Cleaning -> BLS Algorithm -> XGBoost Model -> Gemini API -> Streamlit Output](INSERT_IMAGE_LINK_HERE)
+(<img width="1693" height="929" alt="Image" src="https://github.com/user-attachments/assets/9c11a8e8-5b92-43bc-aa4b-960fdaae7671" />)
 
 **Workflow Summary:**
 1. **Target Query:** User inputs a target star (e.g., `TOI-700`).
@@ -78,4 +78,4 @@ Finding exoplanets used to require a massive team of institutional astronomers m
 
 **Author:**
 Anindita Sanjagiri 
-*[Insert Link to your LinkedIn/Portfolio]*
+*https://www.linkedin.com/in/anindita-sanjagiri/*
