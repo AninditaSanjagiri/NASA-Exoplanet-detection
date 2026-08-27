@@ -251,7 +251,7 @@ particles_hero_html = """
     <div class="content">
         <div class="pill"> POWERED BY NASA DATA</div>
         <h1>AI Exoplanet Hunter</h1>
-        <p>Ready to hunt for alien worlds? Our AI acts like a smart telescope, analyzing the subtle dips in distant starlight to find hidden planets!<br><br>
+        <p>Ready to hunt for alien worlds? This application acts like a smart telescope, analyzing the subtle dips in distant starlight to find hidden planets!<br><br>
         <span style="font-size: 1rem; color: #aaa; background: rgba(255,255,255,0.05); padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: inline-block; margin-top: 10px;">
         <b>🔭 Quick Heads-Up:</b> Tiny, Earth-sized planets are incredibly difficult to detect because they barely block any light when passing in front of their enormous suns. For now, our detector is much better at catching the massive, Jupiter-sized giants!
         </span></p>
