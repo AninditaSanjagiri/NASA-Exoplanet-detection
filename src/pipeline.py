@@ -14,7 +14,7 @@ def fetch_and_clean_lightcurve(target_name, sector=None):
                 search = lk.search_lightcurve(target_name, sector=sector)
         else:
             # 2. General search: Matches TESS, Kepler, and K2 targets
-            search = lk.search_lightcurve(target_name, author="SPOC")
+            search = lk.search_lightcurve(target_name)
             if len(search) == 0:
                 search = lk.search_lightcurve(target_name)
         
