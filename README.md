@@ -4,6 +4,8 @@
 
 An autonomous, deep-space pipeline that acts as a smart telescope. It fetches live astrophysical telemetry from NASA's Kepler and TESS missions, processes the light curves to detect planetary transits, and uses machine learning paired with generative AI to classify and analyze potential exoplanets.
 
+🌐 **Live Demo:** [TESS Exoplanet AI](https://tess-exoplanet-detection.streamlit.app/)
+
 ---
 
 ## 🚀 Why I Built This
