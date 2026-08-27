@@ -227,6 +227,49 @@ st.markdown("""
             transform: translateY(-4px) !important;
             box-shadow: 0 8px 30px rgba(255, 255, 255, 0.5) !important;
         }
+
+        /* --- MOBILE RESPONSIVENESS OVERRIDES --- */
+        @media (max-width: 768px) {
+            /* Full-screen drawer on phones */
+            [data-testid="stSidebar"] { 
+                min-width: 100vw !important; 
+                max-width: 100vw !important; 
+                background: #0e0e11 !important; 
+            }
+            [data-testid="stSidebar"][aria-expanded="false"] { 
+                transform: translateX(-100vw) !important; 
+            }
+            [data-testid="stSidebar"]::before { display: none !important; }
+            
+            /* Center nav links on phone screen */
+            [data-testid="stSidebarNav"] { 
+                left: 8% !important; 
+                top: 15vh !important; 
+                width: 84% !important; 
+                padding-left: 0 !important; 
+            }
+            [data-testid="stSidebarNav"] a, 
+            [data-testid="stSidebarNav"] a * { 
+                font-size: 2.2rem !important; 
+                color: #ffffff !important; 
+            }
+            [data-testid="stSidebarNav"] a::after {
+                right: -30px;
+                font-size: 1rem;
+            }
+            [data-testid="stSidebarHeader"] button::before {
+                color: #ffffff !important;
+            }
+
+            /* Compact CTA button */
+            div.stButton > button:first-child {
+                padding: 1rem 1.5rem !important;
+                margin-bottom: 2rem !important;
+            }
+            div.stButton > button:first-child p {
+                font-size: 1.2rem !important;
+            }
+        }
     </style>
 """, unsafe_allow_html=True)
 
@@ -238,13 +281,25 @@ particles_hero_html = """
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; background-color: transparent; color: white; font-family: 'Inter', sans-serif; overflow: hidden; }
-        #canvas-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-        .content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; pointer-events: none; }
-        .pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; letter-spacing: 1.5px; margin-bottom: 1.5rem; backdrop-filter: blur(10px); }
-        h1 { font-size: 4.8rem; font-weight: 700; margin: 0 0 1rem 0; letter-spacing: -1.5px; background: linear-gradient(to right, #ffffff, #777777); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        p { font-size: 1.25rem; color: #888; max-width: 650px; line-height: 1.6; margin: 0; font-weight: 300; }
-    </style>
+    body { margin: 0; padding: 0; background-color: transparent; color: white; font-family: 'Inter', sans-serif; overflow: hidden; }
+    #canvas-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+    .content { 
+        position: relative; 
+        z-index: 2; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        min-height: 480px; 
+        text-align: center; 
+        padding: 0 1rem;
+        box-sizing: border-box;
+        pointer-events: none; 
+    }
+    .pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 50px; font-size: clamp(0.75rem, 2vw, 0.9rem); font-weight: 600; letter-spacing: 1.5px; margin-bottom: 1rem; backdrop-filter: blur(10px); }
+    h1 { font-size: clamp(2.2rem, 7vw, 4.5rem); font-weight: 700; margin: 0 0 0.75rem 0; letter-spacing: -1.5px; line-height: 1.1; background: linear-gradient(to right, #ffffff, #777777); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    p { font-size: clamp(0.95rem, 3vw, 1.15rem); color: #888; max-width: 650px; line-height: 1.5; margin: 0; font-weight: 300; }
+</style>
 </head>
 <body>
     <canvas id="canvas-container"></canvas>
@@ -266,7 +321,7 @@ particles_hero_html = """
         
         function init() {
             width = canvas.width = window.innerWidth;
-            height = canvas.height = 450; 
+            height = canvas.height = 500; 
             particles = [];
             for (let i = 0; i < 150; i++) {
                 particles.push({
@@ -303,7 +358,7 @@ particles_hero_html = """
 </body>
 </html>
 """
-components.html(particles_hero_html, height=450)
+components.html(particles_hero_html, height=500, scrolling=False)
 
 # --- 3. THE NATIVE ROUTING BUTTON ---
 col1, col2, col3 = st.columns([1, 1.5, 1])
@@ -312,26 +367,39 @@ with col2:
         st.switch_page("pages/detector.py")
 
 # --- 4. THE SPOTLIGHT CARDS ---
-# Background set to transparent
 spotlight_cards_html = """
 <!DOCTYPE html>
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 20px; background-color: transparent; font-family: 'Inter', sans-serif; display: flex; justify-content: center; gap: 20px; }
+        body { 
+            margin: 0; 
+            padding: 10px; 
+            background-color: transparent; 
+            font-family: 'Inter', sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+            box-sizing: border-box;
+        }
         
         .card-spotlight {
             position: relative;
-            border-radius: 1.5rem;
+            border-radius: 1.2rem;
             border: 1px solid #222;
-            background-color: #0A0A0A; /* Slightly lighter than pitch black for contrast */
-            padding: 2rem;
+            background-color: #0A0A0A;
+            padding: 1.25rem;
             overflow: hidden;
             --mouse-x: 50%;
             --mouse-y: 50%;
             --spotlight-color: rgba(255, 255, 255, 0.12);
-            width: 220px;
+            /* Flex layout: 2 cards per row on mobile, 4 on desktop */
+            flex: 1 1 calc(50% - 24px);
+            min-width: 140px;
+            max-width: 220px;
+            box-sizing: border-box;
             cursor: default;
         }
         .card-spotlight::before {
@@ -345,17 +413,16 @@ spotlight_cards_html = """
         }
         .card-spotlight:hover::before { opacity: 1; }
         
-        .title { color: #888; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; }
-        .value { color: #fff; font-size: 2.2rem; font-weight: 600; margin-bottom: 5px; letter-spacing: -1px; }
-        .sub { color: #555; font-size: 0.85rem; }
+        .title { color: #888; font-size: clamp(0.7rem, 2.5vw, 0.85rem); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 6px; }
+        .value { color: #fff; font-size: clamp(1.4rem, 5vw, 2.2rem); font-weight: 600; margin-bottom: 4px; letter-spacing: -1px; }
+        .sub { color: #555; font-size: clamp(0.7rem, 2vw, 0.85rem); }
     </style>
 </head>
 <body>
-    <body>
     <div class="card-spotlight">
         <div class="title">AI Accuracy</div>
         <div class="value">86.8%</div>
-        <div class="sub">Trained on Kepler Data</div>
+        <div class="sub">Kepler Benchmark</div>
     </div>
     <div class="card-spotlight">
         <div class="title">Known Worlds</div>
@@ -365,12 +432,12 @@ spotlight_cards_html = """
     <div class="card-spotlight">
         <div class="title">Live Data</div>
         <div class="value">MAST API</div>
-        <div class="sub">Real Telescope Telemetry</div>
+        <div class="sub">Real Telemetry</div>
     </div>
     <div class="card-spotlight">
         <div class="title">AI Assistant</div>
         <div class="value">Gemini</div>
-        <div class="sub">Smart Dossier Generation</div>
+        <div class="sub">Smart Dossier</div>
     </div>
 
     <script>
@@ -388,7 +455,7 @@ spotlight_cards_html = """
 </body>
 </html>
 """
-components.html(spotlight_cards_html, height=220)
+components.html(spotlight_cards_html, height=360)
 
 # --- INTERACTIVE SIMULATOR (CUSTOM HTML/CANVAS) ---
 st.markdown("<br><hr style='border: 1px solid rgba(255,255,255,0.08);'><br>", unsafe_allow_html=True)
