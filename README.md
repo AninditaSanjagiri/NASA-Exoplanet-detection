@@ -17,7 +17,7 @@ I have been fascinated by space, the stars, and the possibility of other worlds 
 Building this pipeline was a journey from understanding basic astrophysics to deploying a full-stack automated AI application. 
 
 ### 1. Learning the Fundamentals
-I started completely from scratch by studying how exoplanet transits actually work. I followed this excellent [YouTube Tutorial - INSERT LINK HERE] to understand the math behind dips in starlight and how to interact with NASA's archive. 
+I started completely from scratch by studying how exoplanet transits actually work. I followed this excellent [YouTube Tutorial - https://youtu.be/J2yD9JrqllA?si=57EqiMzPzEFjPuGK] to understand the math behind dips in starlight and how to interact with NASA's archive. 
 
 ![Placeholder: Image of you watching the tutorial or a screenshot of the video](INSERT_IMAGE_LINK_HERE)
 
